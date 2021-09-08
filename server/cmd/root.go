@@ -6,8 +6,8 @@ import (
 	"log"
 	"net"
 
-	"github.com/n-arsenic/grpc-service/server/lib/grpcserver"
-	"github.com/n-arsenic/grpc-service/server/lib/system"
+	"github.com/n-arsenic/akunaki/server/lib/grpcserver"
+	"github.com/n-arsenic/akunaki/server/lib/system"
 	"github.com/spf13/cobra"
 )
 
@@ -20,7 +20,7 @@ func NewRootCmd() *cobra.Command {
 	var config Config
 
 	cmd := &cobra.Command{
-		Use:   "judas",
+		Use:   "grpc",
 		Short: "grpc server",
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if config.Message == "" {

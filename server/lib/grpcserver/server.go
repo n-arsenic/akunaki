@@ -3,7 +3,7 @@ package grpcserver
 import (
 	"context"
 
-	pb "github.com/n-arsenic/grpc-service/server/generated/proto/echo"
+	pb "github.com/n-arsenic/akunaki/server/generated/proto/echo"
 
 	"google.golang.org/grpc"
 )

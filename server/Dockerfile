@@ -1,15 +1,10 @@
 FROM golang:1.16-alpine
 
-COPY go.mod ./
-COPY go.sum ./
+WORKDIR /go/src/akunaki
+
+COPY . .
 RUN go mod download
 
-COPY *.go ./
+RUN go build -o /go/bin/akunaki-server
 
-ENV GOOS=linux
-ENV GOARCH=amd64
-
-RUN go build -o /go/bin/grpc-service
-
-ENTRYPOINT ["/go/bin/grpc-service"]
-CMD ["server"]
+ENTRYPOINT ["/go/bin/akunaki-server"]

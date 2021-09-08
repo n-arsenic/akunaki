@@ -1,2 +1,4 @@
 **/generated/*
-!**/generated/.gitkeep 
+!.gitignore 
+
+.DS_Store

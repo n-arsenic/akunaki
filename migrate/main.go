@@ -3,11 +3,11 @@ package main
 import (
 	"log"
 
-	"github.com/n-arsenic/akunaki/server/cmd"
+	"github.com/n-arsenic/akunaki/migrate/cmd"
 )
 
 func main() {
-	cmd := cmd.NewRootCmd()
+	cmd := cmd.NewMigrateCmd()
 
 	if err := cmd.Execute(); err != nil {
 		log.Fatal(err)

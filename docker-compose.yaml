@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  akunaki_server:
+    image: akunaki_server
+    depends_on:
+      - postgres_db
+    ports:
+      - "8000:8000"
+  postgres_db:
+    image: postgres
+    depends_on:
+      - postgres_migration
+    ports:
+      - "8001:5432"
+  postgres_migration:
+    image: postgres_migration
+    ports:
